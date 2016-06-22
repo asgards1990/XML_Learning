@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New XSD document created with EditiX XML Editor (http://www.editix.com) at Thu May 26 19:09:16 CEST 2016 -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:attribute name="sexe">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="masculin"/>
+				<xs:enumeration value="feminin"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:element name="numero" type="xs:nonNegativeInteger"/>
+	<xs:element name="voie">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="type" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="codePostal">
+		<xs:simpleType>
+			<xs:restriction base="xs:nonNegativeInteger">
+				<xs:totalDigits value="5"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="adresse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="numero"/>
+				<xs:element ref="voie"/>
+				<xs:element ref="codePostal"/>
+				<xs:element name="ville" type="xs:string"/>
+				<xs:element name="pays" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="telephone">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="type" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="telephones">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="telephone" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="email">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="type" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="emails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="email" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="personne">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nom" type="xs:string"/>
+				<xs:element name="prenom" type="xs:string"/>
+				<xs:element ref="adresse"/>
+				<xs:element ref="telephones"/>
+				<xs:element ref="emails"/>
+			</xs:sequence>
+			<xs:attribute ref="sexe"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="repertoire">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="personne" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

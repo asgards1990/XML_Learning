@@ -1,0 +1,29 @@
+<!-- DTD created at Tue May 24 13:49:51 CEST 2016 with EditiX XML Editor (http://www.editix.com). Please insert an encoding attribute header for converting any DTD  -->
+
+
+
+<!ELEMENT repertoire (personne*)>
+
+<!ELEMENT personne (nom,prenom,adresse,telephones,emails)>
+<!ATTLIST personne sexe (masculin|feminin) #REQUIRED>
+
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenom (#PCDATA)>
+
+<!ELEMENT adresse (numero,voie,codePostal,ville,pays)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT voie (#PCDATA)>
+<!ATTLIST voie type CDATA #IMPLIED>
+<!ELEMENT codePostal (#PCDATA)>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT pays (#PCDATA)>
+
+<!ELEMENT telephones (telephone+)>
+<!ELEMENT telephone (#PCDATA)>
+<!ATTLIST telephone type CDATA #REQUIRED>
+
+
+
+<!ELEMENT emails (email+)>
+<!ELEMENT email (#PCDATA)>
+<!ATTLIST email type CDATA #REQUIRED>

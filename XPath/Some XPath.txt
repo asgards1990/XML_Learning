@@ -1,0 +1,13 @@
+-Sélectionner tous les nœuds descendants du deuxième nœud "personne":
+/repertoire/personne[position()=2]/descendant::*
+-Sélectionner le nœud "personne" correspondant au individu ayant au moins 2 numéros de téléphone.
+/repertoire/personne/telephones[count(telephone)>1]/..
+/repertoire/personne[count(telephones/telephone)>1]
+-Sélectionner tous les nœuds "personne".
+/repertoir/personne
+-Sélectionner le deuxième nœud "personne" dont le pays de domiciliation est la France .
+(/repertoire/personne/adresse/pays[text()='FRANCE']/../..)[position()=2]
+/repertoire/personne[text(adresse/pays)='FRANCE'][position()=2]
+-Sélectionner tous les nœuds "personne" de sexe masculin le pays de domiciliation est les Etats-Unis.
+/repertoire/personne[@sexe='masculin']/adresse/pays[text()='USA']/../..
+/repertoire/personne[@sexe='masculin'][adresse/pays='USA']

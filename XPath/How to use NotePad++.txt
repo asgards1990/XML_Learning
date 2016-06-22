@@ -1,0 +1,4 @@
+Download XML pluggins.
+-ctrl+alt+B to format
+-ctrl+alt+m to evaluate xml file in relation to DTD/XSD
+-use xml pluggins to do a XPath expression research.

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New XSD document created with EditiX XML Editor (http://www.editix.com) at Thu May 26 18:36:08 CEST 2016 -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+<xsd:complexType name="personne">
+    <xsd:attribute name="age">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:nonNegativeInteger">
+                <xsd:minExclusive value="17" ></xsd:minExclusive>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:attribute>
+</xsd:complexType>
+
+</xs:schema>

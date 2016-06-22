@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<racine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="schema.xsd">
+
+<balise list="A:1_B C-2.">contenu de la balise</balise>
+<balise list="AZERTY 123456 QSDFGH">contenu de la balise</balise>
+
+<personne num="P1">Paul</personne>
+<personne num="P2">Marie</personne>
+<personne enfants="P1 P2">Jeanne</personne>
+
+
+<!ENTITY samsung "Samsung">
+<!ENTITY apple "Apple">
+<telephone marque="apple">iPhone</telephone>
+<telephone marque="samsung">Galaxy SII</telephone>
+
+<!-- 42 ans et 6 minutes -->
+<duree>P42YT6M</duree>
+<!-- -2 heures -->
+<duree>-PT2H</duree>
+<!-- 2 jours -->
+<duree>P2D</duree>
+<!-- 10.5 secondes -->
+<duree>PT10.5S</duree>
+
+<!-- 13 janvier 1924 -->
+<madate>1924-01-13</madate>
+<!-- 12 décembre 34 avant JC -->
+<madate>-0034-12-12</madate>
+<!-- 4 novembre 12405 -->
+<madate>12405-11-04</madate>
+
+
+<!-- 10 heures et 24 minutes -->
+<monheure>10:24:00</monheure>
+<!-- 2,5 secondes -->
+<monheure>00:00:02.5</monheure>
+
+<prix devise="euros">35</prix>
+
+<voiture marque="Renault" type="essence">Clio</voiture>
+
+
+<!-- contient un attribut -->
+<voiture2 marque="Renault" modele="Clio" ></voiture2>
+
+<!-- contient d'autres éléments -->
+<personne>
+    <nom>DUPONT</nom>
+    <prenom>Robert</prenom>
+</personne>
+
+<personne>
+    <nom>Zozor</nom>
+    <prenom>Robert</prenom>
+    <prenom>Bernard</prenom>
+</personne>
+<personne>
+    <nom>Zozor</nom>
+    <prenom>Robert</prenom>
+    <prenom>Bernard</prenom>
+    <prenom>Paul</prenom>
+    <prenom>Pierre</prenom>
+</personne>
+
+<!-- valide -->
+<personne2 sexe="masculin">
+    <nom>DUPONT</nom>
+    <prenom>Robert</prenom>
+</personne2>
+
+<!-- valide -->
+<personne2 sexe="masculin">
+    <prenom>Robert</prenom>
+    <nom>DUPONT</nom>
+</personne2>
+
+</racine>
